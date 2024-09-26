@@ -8,7 +8,8 @@ const MainCastDiv=styled.div`
     background-color: lightblue;
 `;
 
-const IndivCastDiv=styled.div`
+// CSS styling for each cast member and higlights my favorite 
+const IndivCastDiv=styled.div<{ person: {name: string}}>`
     display: flex;
     flex-direction: column;   
     justify-content: center;
@@ -18,7 +19,7 @@ const IndivCastDiv=styled.div`
     border: 3px green solid;
     font: italic small-caps bold calc(2px + 1vw) 'Montserrat', sans-serif;
     text-align: center;
-    background-color: pink;
+    background-color: ${(props) => (props.person.name === "Yvonne Orji" || props.person.name === "Amanda Seales" || props.person.name === "Kendrick Sampson" ? 'deeppink' : 'pink')};
     
 `;
 
@@ -38,10 +39,11 @@ export default function InsecureTvShow(props : { data:Cast[] }) {
         <MainCastDiv>
           <MainTitleHeader>
             <h1>Cast Members from the Hit Tv Show 'Insecure'</h1>
+            <p>*My favorites? They're the ones shining in pink! </p>
           </MainTitleHeader>
             {
             props.data.map((cast: Cast) => 
-                    <IndivCastDiv key={cast.person.id}>
+                    <IndivCastDiv key={cast.person.id} person={cast.person}>
                     <h1>{cast.person.name}</h1>
                     <p>{cast.character.name}</p>  
                     <img src={cast.person.image.medium} alt={`image of ${cast.person.name}`}></img>       
