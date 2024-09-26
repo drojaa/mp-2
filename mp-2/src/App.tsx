@@ -1,7 +1,7 @@
 
 import styled from "styled-components";
 import {useEffect, useState} from "react";
-import {Cast} from "../interfaces/Cast";
+import {Cast} from "./interfaces/Cast";
 
 const MainDiv=styled.div`
     width: 80vw;
