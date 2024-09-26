@@ -40,7 +40,7 @@ export default function InsecureTvShow(props : { data:Cast[] }) {
         <MainCastDiv>
           <MainTitleHeader>
             <h1>Cast Members from the Hit Tv Show 'Insecure'</h1>
-            <p>*My favorites? They're the ones shining in pink! </p>
+            <p>*My favorites? They're the ones shining in hot pink! </p>
           </MainTitleHeader>
             {
             props.data.map((cast: Cast) => 
