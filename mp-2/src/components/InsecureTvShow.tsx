@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import {Cast} from "../interfaces/Cast"
 
+// CSS Styling for the Container holding all of the content
 const MainCastDiv=styled.div`
     display: flex;
     flex-flow: row wrap;    
@@ -22,7 +23,7 @@ const IndivCastDiv=styled.div<{ person: {name: string}}>`
     background-color: ${(props) => (props.person.name === "Yvonne Orji" || props.person.name === "Amanda Seales" || props.person.name === "Kendrick Sampson" ? 'deeppink' : 'pink')};
     
 `;
-
+// CSS styling for the header and sidenote/description
     const MainTitleHeader=styled.div`
     display: block;
     text-align: center;
@@ -32,7 +33,7 @@ const IndivCastDiv=styled.div<{ person: {name: string}}>`
 `;
 
 
-
+// Component to upload data and UI styling to webpage
 export default function InsecureTvShow(props : { data:Cast[] }) {
     return (
         
@@ -53,8 +54,5 @@ export default function InsecureTvShow(props : { data:Cast[] }) {
         }
     </MainCastDiv>
         
-    )
-
-   
-       
+    )      
 }

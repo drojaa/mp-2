@@ -3,6 +3,7 @@ import styled from "styled-components";
 import {useEffect, useState} from "react";
 import {Cast} from "./interfaces/Cast";
 
+//CSS sytling for the Basic Overall Page
 const MainDiv=styled.div`
     width: 80vw;
     margin: auto;
