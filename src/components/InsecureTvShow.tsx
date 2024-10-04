@@ -6,7 +6,7 @@ const MainCastDiv=styled.div`
     display: flex;
     flex-flow: row wrap;    
     justify-content: space-evenly;
-    background-color: lightblue;
+    background-color: #d8d1b9;
 `;
 
 // CSS styling for each cast member and higlights my favorite 
@@ -17,11 +17,17 @@ const IndivCastDiv=styled.div<{ person: {name: string}}>`
     max-width: 30%;
     padding: 2%;
     margin: 1%;
-    border: 3px green solid;
+    border: 7px #cec4a7 solid;
     font: italic small-caps bold calc(2px + 1vw) 'Montserrat', sans-serif;
     text-align: center;
-    background-color: ${(props) => (props.person.name === "Yvonne Orji" || props.person.name === "Amanda Seales" || props.person.name === "Kendrick Sampson" ? 'deeppink' : 'pink')};
-    
+    background-color: #c1b69c ;
+    ${(props) =>
+        (props.person.name === "Yvonne Orji" ||
+        props.person.name === "Amanda Seales" ||
+        props.person.name === "Kendrick Sampson") &&
+        `&:hover {
+          background-color: pink;
+        }`}
 `;
 // CSS styling for the header and sidenote/description
     const MainTitleHeader=styled.div`
@@ -29,6 +35,7 @@ const IndivCastDiv=styled.div<{ person: {name: string}}>`
     text-align: center;
     margin: auto;
     width: 100%;
+    font: italic small-caps bold calc(2px + 1vw) 'Montserrat', sans-serif;
     max-width: 100%;
 `;
 
@@ -40,7 +47,7 @@ export default function InsecureTvShow(props : { data:Cast[] }) {
         <MainCastDiv>
           <MainTitleHeader>
             <h1>Cast Members from the Hit Tv Show 'Insecure'</h1>
-            <p>*My favorites? They're the ones shining in hot pink! </p>
+            <p>*My favorites? Just hover over each cast member—the ones glowing in pink are my top picks! </p>
           </MainTitleHeader>
             {
             props.data.map((cast: Cast) => 

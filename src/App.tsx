@@ -7,7 +7,7 @@ import {Cast} from "./interfaces/Cast";
 const MainDiv=styled.div`
     width: 80vw;
     margin: auto;
-    border: 5px purple solid;
+    border: 9px #c1b69c solid;
 `;
 
 export default function App() {
